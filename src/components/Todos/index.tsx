@@ -9,8 +9,8 @@ interface Props {
 const Todos: React.FC<Props> = ({ todos }) => {
   return (
     <div>
-      {todos.map((todo, i) => (
-        <Todo key={i} text={todo.text} completed={todo.completed} />
+      {todos.map(todo => (
+        <Todo key={todo.id} {...todo} />
       ))}
     </div>
   );
