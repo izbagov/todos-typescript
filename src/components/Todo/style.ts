@@ -8,6 +8,12 @@ export const Container = styled.div`
   align-items: center;
   user-select: none;
   position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: #e0e0e0;
+  }
 `;
 
 export const Text = styled.div`
