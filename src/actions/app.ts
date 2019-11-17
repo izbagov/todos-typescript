@@ -1,15 +1,17 @@
-import { ADD_TODO, TOGGLE_TODO, AppActionTypes, ITodo } from '../types/app';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions/actionsTypes';
+import { AppActionTypes, ITodo } from '../types/app';
 
-export function addTodo(todo: ITodo): AppActionTypes {
-  return {
-    type: ADD_TODO,
-    payload: todo
-  };
-}
+export const addTodo = (todo: ITodo): AppActionTypes => ({
+  type: ADD_TODO,
+  payload: todo
+});
 
-export function toggleTodo(id: number): AppActionTypes {
-  return {
-    type: TOGGLE_TODO,
-    payload: id
-  };
-}
+export const toggleTodo = (id: number): AppActionTypes => ({
+  type: TOGGLE_TODO,
+  payload: id
+});
+
+export const removeTodo = (id: number): AppActionTypes => ({
+  type: REMOVE_TODO,
+  payload: id
+});

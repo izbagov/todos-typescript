@@ -1,4 +1,5 @@
-import { IAppState, AppActionTypes, ADD_TODO, TOGGLE_TODO } from '../types/app';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions/actionsTypes';
+import { IAppState, AppActionTypes } from '../types/app';
 
 const initialState: IAppState = {
   filter: 'SHOW_ALL',
@@ -36,6 +37,10 @@ const todoApp = (state = initialState, action: AppActionTypes): IAppState => {
 
           return todo;
         })
+      });
+    case REMOVE_TODO:
+      return Object.assign({}, state, {
+        todos: state.todos.filter(todo => todo.id !== action.payload)
       });
     default:
       return state;

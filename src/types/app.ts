@@ -1,5 +1,4 @@
-export const ADD_TODO = 'ADD_TODO';
-export const TOGGLE_TODO = 'TOGGLE_TODO';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions/actionsTypes';
 
 export interface IAppState {
   filter: string;
@@ -22,4 +21,9 @@ interface ToggleTodo {
   payload: number;
 }
 
-export type AppActionTypes = AddTodo | ToggleTodo;
+interface RemoveTodo {
+  type: typeof REMOVE_TODO;
+  payload: number;
+}
+
+export type AppActionTypes = AddTodo | ToggleTodo | RemoveTodo;
