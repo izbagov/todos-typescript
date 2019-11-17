@@ -1,7 +1,6 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions/actionsTypes';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_VISIBILITY_FILTER } from '../actions/actionsTypes';
 
 export interface IAppState {
-  filter: string;
   todos: ITodo[];
 }
 
@@ -26,4 +25,9 @@ interface RemoveTodo {
   payload: number;
 }
 
-export type AppActionTypes = AddTodo | ToggleTodo | RemoveTodo;
+interface SetFilter {
+  type: typeof SET_VISIBILITY_FILTER;
+  filter: string;
+}
+
+export type AppActionTypes = AddTodo | ToggleTodo | RemoveTodo | SetFilter;

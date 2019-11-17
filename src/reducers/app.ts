@@ -2,7 +2,6 @@ import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions/actionsTypes';
 import { IAppState, AppActionTypes } from '../types/app';
 
 const initialState: IAppState = {
-  filter: 'SHOW_ALL',
   todos: [
     {
       id: 0,
