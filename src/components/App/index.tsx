@@ -15,7 +15,7 @@ const App: React.FC<Props> = ({ todos }) => {
   return (
     <Container>
       <h2>Добавить задачу</h2>
-      <TextField />
+      <TextField todos={todos} />
       <Todos todos={todos} />
       <Footer todos={todos} />
     </Container>

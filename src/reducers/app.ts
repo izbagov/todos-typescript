@@ -25,7 +25,9 @@ const initialState: IAppState = {
 const todoApp = (state = initialState, action: AppActionTypes): IAppState => {
   switch (action.type) {
     case ADD_TODO:
-      return state;
+      return Object.assign({}, state, {
+        todos: [...state.todos, action.payload]
+      });
     case TOGGLE_TODO:
       return Object.assign({}, state, {
         todos: state.todos.map(todo => {
